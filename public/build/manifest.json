@@ -1,0 +1,69 @@
+{
+  "_figtree-400-normal-BD4aNku5.woff": {
+    "file": "assets/figtree-400-normal-BD4aNku5.woff",
+    "src": "_figtree-400-normal-BD4aNku5.woff"
+  },
+  "_figtree-400-normal-CXAzuTZb.woff2": {
+    "file": "assets/figtree-400-normal-CXAzuTZb.woff2",
+    "src": "_figtree-400-normal-CXAzuTZb.woff2"
+  },
+  "_figtree-400-normal-Gbh-3PTk.woff": {
+    "file": "assets/figtree-400-normal-Gbh-3PTk.woff",
+    "src": "_figtree-400-normal-Gbh-3PTk.woff"
+  },
+  "_figtree-400-normal-g7Dtegnw.woff2": {
+    "file": "assets/figtree-400-normal-g7Dtegnw.woff2",
+    "src": "_figtree-400-normal-g7Dtegnw.woff2"
+  },
+  "_figtree-500-normal-BOEJvrb_.woff": {
+    "file": "assets/figtree-500-normal-BOEJvrb_.woff",
+    "src": "_figtree-500-normal-BOEJvrb_.woff"
+  },
+  "_figtree-500-normal-BWnGEVsr.woff2": {
+    "file": "assets/figtree-500-normal-BWnGEVsr.woff2",
+    "src": "_figtree-500-normal-BWnGEVsr.woff2"
+  },
+  "_figtree-500-normal-B_yy1phn.woff": {
+    "file": "assets/figtree-500-normal-B_yy1phn.woff",
+    "src": "_figtree-500-normal-B_yy1phn.woff"
+  },
+  "_figtree-500-normal-Du0rIuHj.woff2": {
+    "file": "assets/figtree-500-normal-Du0rIuHj.woff2",
+    "src": "_figtree-500-normal-Du0rIuHj.woff2"
+  },
+  "_figtree-600-normal-BM_oTo4n.woff": {
+    "file": "assets/figtree-600-normal-BM_oTo4n.woff",
+    "src": "_figtree-600-normal-BM_oTo4n.woff"
+  },
+  "_figtree-600-normal-CQqsimlV.woff": {
+    "file": "assets/figtree-600-normal-CQqsimlV.woff",
+    "src": "_figtree-600-normal-CQqsimlV.woff"
+  },
+  "_figtree-600-normal-Cv_xCTDl.woff2": {
+    "file": "assets/figtree-600-normal-Cv_xCTDl.woff2",
+    "src": "_figtree-600-normal-Cv_xCTDl.woff2"
+  },
+  "_figtree-600-normal-DJlfifZj.woff2": {
+    "file": "assets/figtree-600-normal-DJlfifZj.woff2",
+    "src": "_figtree-600-normal-DJlfifZj.woff2"
+  },
+  "_fonts-DRtb56PA.css": {
+    "file": "assets/fonts-DRtb56PA.css",
+    "src": "_fonts-DRtb56PA.css"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DslBqsuZ.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CMUf3pGY.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
