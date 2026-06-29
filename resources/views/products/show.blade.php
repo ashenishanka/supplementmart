@@ -1,4 +1,36 @@
-<x-layouts.storefront :title="$product->name . ' - ' . config('app.name')">
+@php
+    $productOgImage = $product->images->isNotEmpty() ? $product->images->first()->url : null;
+    $productDesc    = $product->meta_description
+        ?? $product->short_description
+        ?? \Illuminate\Support\Str::limit(strip_tags($product->description ?? ''), 155);
+    $jsonLd = json_encode([
+        '@context'    => 'https://schema.org/',
+        '@type'       => 'Product',
+        'name'        => $product->name,
+        'description' => $productDesc,
+        'sku'         => $product->sku,
+        'image'       => $productOgImage,
+        'brand'       => ['@type' => 'Brand', 'name' => $product->brand?->name ?? ''],
+        'offers'      => [
+            '@type'        => 'Offer',
+            'url'          => route('products.show', $product->slug),
+            'priceCurrency'=> 'LKR',
+            'price'        => (string) ($product->current_price ?? $product->price),
+            'availability' => $product->stock_quantity > 0
+                                ? 'https://schema.org/InStock'
+                                : 'https://schema.org/OutOfStock',
+        ],
+    ]);
+@endphp
+<x-layouts.storefront
+    :title="$product->meta_title ?? $product->name"
+    :description="$productDesc"
+    :og-image="$productOgImage"
+    :canonical="route('products.show', $product->slug)"
+>
+    <x-slot name="head">
+        <script type="application/ld+json">{!! $jsonLd !!}</script>
+    </x-slot>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <nav class="mb-6 text-sm text-gray-500">
             <a href="{{ route('home') }}" class="hover:text-emerald-600">Home</a>
