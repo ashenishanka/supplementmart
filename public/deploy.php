@@ -13,7 +13,32 @@ if (($_GET['key'] ?? '') !== $secret) {
 header('Content-Type: text/plain');
 
 $root = dirname(__DIR__);
-$php  = PHP_BINARY;
+
+$candidates = [
+    '/opt/alt/php83/usr/bin/php',
+    '/opt/cpanel/ea-php83/root/usr/bin/php',
+    '/usr/local/bin/ea-php83',
+    '/usr/bin/php83',
+    '/usr/local/bin/php83',
+    '/opt/alt/php82/usr/bin/php',
+    '/usr/bin/php',
+];
+
+$php = null;
+foreach ($candidates as $candidate) {
+    if (is_executable($candidate)) {
+        $php = $candidate;
+        break;
+    }
+}
+
+if ($php === null) {
+    echo "No working CLI PHP binary found among candidates:\n";
+    foreach ($candidates as $candidate) {
+        echo " - {$candidate} (exists: " . (file_exists($candidate) ? 'yes' : 'no') . ", executable: " . (is_executable($candidate) ? 'yes' : 'no') . ")\n";
+    }
+    exit;
+}
 
 function run(string $cmd): void
 {
