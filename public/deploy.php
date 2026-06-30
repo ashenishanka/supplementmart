@@ -45,7 +45,13 @@ function run(string $cmd): void
     echo "\n\$ {$cmd}\n";
     flush();
 
-    $process = proc_open($cmd, [1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $pipes, dirname(__DIR__));
+    $env = [
+        'HOME' => '/home/sumithssign',
+        'COMPOSER_HOME' => '/home/sumithssign/.composer',
+        'PATH' => getenv('PATH') ?: '/usr/local/bin:/usr/bin:/bin',
+    ];
+
+    $process = proc_open($cmd, [1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $pipes, dirname(__DIR__), $env);
 
     if (! is_resource($process)) {
         echo "FAILED TO START PROCESS\n";
