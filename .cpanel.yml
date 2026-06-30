@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/sumithssign/www.supplementmart.lk
+    - /usr/local/bin/ea-php83 /opt/cpanel/composer/bin/composer install --no-dev --optimize-autoloader --working-dir=$DEPLOYPATH
+    - /usr/local/bin/ea-php83 $DEPLOYPATH/artisan migrate --force
+    - /usr/local/bin/ea-php83 $DEPLOYPATH/artisan config:cache
+    - /usr/local/bin/ea-php83 $DEPLOYPATH/artisan route:cache
+    - /usr/local/bin/ea-php83 $DEPLOYPATH/artisan view:cache
