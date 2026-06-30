@@ -71,10 +71,6 @@ function run(string $cmd): void
 echo "PHP binary: {$php}\n";
 echo "Project root: {$root}\n";
 
-run("{$php} {$root}/composer.phar install --no-dev --optimize-autoloader --working-dir={$root}");
-run("{$php} {$root}/artisan migrate --force");
-run("{$php} {$root}/artisan config:cache");
-run("{$php} {$root}/artisan route:cache");
-run("{$php} {$root}/artisan view:cache");
+run("{$php} {$root}/artisan db:seed --force");
 
 echo "\n\n=== DONE. DELETE public/deploy.php NOW VIA FILE MANAGER. ===\n";
