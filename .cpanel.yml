@@ -1,9 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/sumithssign/www.supplementmart.lk
-    - /usr/local/bin/ea-php83 $DEPLOYPATH/composer.phar install --no-dev --optimize-autoloader --working-dir=$DEPLOYPATH
-    - /usr/local/bin/ea-php83 $DEPLOYPATH/artisan migrate --force
-    - /usr/local/bin/ea-php83 $DEPLOYPATH/artisan config:cache
-    - /usr/local/bin/ea-php83 $DEPLOYPATH/artisan route:cache
-    - /usr/local/bin/ea-php83 $DEPLOYPATH/artisan view:cache
+    - export DEPLOYPATH=/home/sumithssign/www.supplementmart.lk HOME=/home/sumithssign COMPOSER_HOME=/home/sumithssign/.composer PHP=/opt/alt/php83/usr/bin/php && $PHP $DEPLOYPATH/composer.phar install --no-dev --optimize-autoloader --working-dir=$DEPLOYPATH
+    - export DEPLOYPATH=/home/sumithssign/www.supplementmart.lk HOME=/home/sumithssign PHP=/opt/alt/php83/usr/bin/php && $PHP $DEPLOYPATH/artisan migrate --force
+    - export DEPLOYPATH=/home/sumithssign/www.supplementmart.lk HOME=/home/sumithssign PHP=/opt/alt/php83/usr/bin/php && $PHP $DEPLOYPATH/artisan config:cache
+    - export DEPLOYPATH=/home/sumithssign/www.supplementmart.lk HOME=/home/sumithssign PHP=/opt/alt/php83/usr/bin/php && $PHP $DEPLOYPATH/artisan route:cache
+    - export DEPLOYPATH=/home/sumithssign/www.supplementmart.lk HOME=/home/sumithssign PHP=/opt/alt/php83/usr/bin/php && $PHP $DEPLOYPATH/artisan view:cache
