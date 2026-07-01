@@ -21,6 +21,12 @@ class CustomerResource extends Resource
 {
     protected static ?string $model = User::class;
 
+    protected static ?string $modelLabel = 'Customer';
+
+    protected static ?string $pluralModelLabel = 'Customers';
+
+    protected static ?string $navigationLabel = 'Customers';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUsers;
 
     public static function getEloquentQuery(): Builder

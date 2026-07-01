@@ -20,6 +20,14 @@ class AdminResource extends Resource
 {
     protected static ?string $model = User::class;
 
+    protected static ?string $modelLabel = 'Admin';
+
+    protected static ?string $pluralModelLabel = 'Admins';
+
+    protected static ?string $navigationLabel = 'Admins';
+
+    protected static ?string $navigationGroup = 'System';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedShieldCheck;
 
     public static function getEloquentQuery(): Builder
