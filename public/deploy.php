@@ -71,6 +71,12 @@ function run(string $cmd): void
 echo "PHP binary: {$php}\n";
 echo "Project root: {$root}\n";
 
-run("{$php} {$root}/artisan db:seed --force");
+run("{$php} {$root}/artisan route:clear");
+run("{$php} {$root}/artisan config:clear");
+run("{$php} {$root}/artisan view:clear");
+run("{$php} {$root}/artisan cache:clear");
+run("{$php} {$root}/artisan route:cache");
+run("{$php} {$root}/artisan config:cache");
+run("{$php} {$root}/artisan view:cache");
 
-echo "\n\n=== DONE. DELETE public/deploy.php NOW VIA FILE MANAGER. ===\n";
+echo "\n\n=== DONE. ===\n";
